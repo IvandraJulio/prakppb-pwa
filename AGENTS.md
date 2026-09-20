@@ -11,9 +11,9 @@ Dummy gunshop PWA — an offline-first storefront built as a Progressive Web App
 ├── .githooks/          # git hooks (commit-msg enforces Conventional Commits)
 ├── .oxlintrc.json      # oxlint config
 ├── conventions/        # project conventions (linked below)
-├── public/             # static assets served at / (manifest, icons, sw.js)
+├── public/             # static assets served at / (icons, product images)
 ├── src/
-│   ├── main.jsx        # entry, registers service worker, mounts <App/>
+│   ├── main.jsx        # entry, mounts <App/>
 │   ├── App.jsx         # app shell: tab state, header/nav/content/footer
 │   ├── App.css         # app shell styles
 │   ├── index.css       # global styles

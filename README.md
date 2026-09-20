@@ -23,15 +23,13 @@ npm run lint     # oxlint
 
 ```
 .
-├── index.html              # HTML shell, manifest link
-├── vite.config.js
+├── index.html              # HTML shell
+├── vite.config.js          # Vite + vite-plugin-pwa (manifest + service worker)
 ├── public/                 # static assets served at /
-│   ├── manifest.webmanifest
-│   ├── sw.js               # service worker
 │   ├── icon-192.png / icon-512.png / icon.svg
 │   └── guns/               # product images
 └── src/
-    ├── main.jsx            # entry, registers service worker, mounts <App/>
+    ├── main.jsx            # entry, mounts <App/>
     ├── App.jsx             # app shell: tab state, header/nav/content/footer
     ├── App.css             # app shell styles
     ├── index.css           # global styles
