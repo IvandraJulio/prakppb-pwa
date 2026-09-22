@@ -18,9 +18,9 @@ dev-dist
 .env.*
 !.env.example
 
-# Agent docs
-# AGENTS.md
-# conventions/
+# AI agent docs
+AGENTS.md
+conventions/
 
 # Editor directories and files
 .vscode/*
