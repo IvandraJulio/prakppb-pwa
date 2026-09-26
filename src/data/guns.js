@@ -53,6 +53,24 @@ const GUNS = [
     description:
       'The other pump gun. Twin action bars, a simple safety on the tang, and a price that leaves money for ammunition.',
   },
+  {
+    name: 'Tactical Pistol Flash',
+    type: 'Pistol',
+    caliber: '9mm Parabellum',
+    price: 650,
+    image: '/guns/gun1.jpg',
+    description:
+      'Modern striker-fired service pistol featuring a two-tone high-durability slide, ergonomic polymer frame, and rapid target acquisition.',
+  },
+  {
+    name: 'Classic Assault Carbine',
+    type: 'Rifle',
+    caliber: '7.62x39mm',
+    price: 1050,
+    image: '/guns/gun2.jpg',
+    description:
+      'Iconic gas-operated assault carbine equipped with classic wooden furniture, high-capacity curved magazine, and legendary rugged reliability.',
+  },
 ]
 
 export default GUNS

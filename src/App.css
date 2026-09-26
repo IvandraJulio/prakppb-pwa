@@ -11,6 +11,9 @@
   flex-direction: column;
 }
 
+/* =========================================
+   HEADER & NAVIGATION
+   ========================================= */
 .header {
   display: flex;
   align-items: center;
@@ -21,7 +24,7 @@
   border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
 }
 
 .brand {
@@ -45,6 +48,7 @@
   color: var(--steel);
   font: inherit;
   cursor: pointer;
+  transition: color 0.15s ease;
 }
 
 .nav-link:hover {
@@ -56,16 +60,19 @@
   border-bottom-color: var(--brass);
 }
 
+/* =========================================
+   MAIN LAYOUT & MASTHEAD
+   ========================================= */
 .main {
   width: 100%;
-  max-width: 760px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 24px 64px;
 }
 
 .masthead,
 .page {
-  padding: 64px 0 40px;
+  padding: 48px 0 32px;
 }
 
 .masthead {
@@ -82,26 +89,181 @@
 
 .lede {
   color: var(--steel);
-  max-width: 46ch;
+  max-width: 52ch;
   margin: 0;
 }
 
+/* =========================================
+   CONTROLS: SEARCH, SORT & FILTER
+   ========================================= */
+.controls-section {
+  padding: 24px 0 16px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 0.9rem;
+  color: var(--steel);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 9px 36px 9px 34px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 1px var(--ink);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--steel);
+  cursor: pointer;
+  padding: 2px 6px;
+  line-height: 1;
+}
+
+.search-clear-btn:hover {
+  color: var(--ink);
+}
+
+.sort-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--steel);
+  white-space: nowrap;
+}
+
+.sort-select {
+  padding: 9px 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.filter-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--steel);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-pill:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.filter-pill.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.filter-badge {
+  background: var(--paper);
+  color: var(--steel);
+  font-size: 0.75rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.filter-pill.active .filter-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* =========================================
+   STOCK GRID & UNIFORM CARD SIZES
+   ========================================= */
 .list-head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding: 32px 0 8px;
+  padding: 24px 0 12px;
 }
 
 .list-head h2 {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   letter-spacing: 0.02em;
+  margin: 0;
 }
 
 .count {
   color: var(--steel);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .stock {
@@ -109,77 +271,160 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 16px;
+  align-items: stretch;
 }
 
+/* Card item size consistency */
 .card {
   display: flex;
+  height: 100%;
 }
 
 .card-btn {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 0 0 14px;
+  height: 100%;
+  padding: 0;
   background: #fff;
   border: 1px solid var(--line);
   font: inherit;
   text-align: left;
   cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  overflow: hidden;
 }
 
 .card-btn:hover {
   border-color: var(--brass);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card-img-wrap {
+  width: 100%;
+  height: 130px;
+  background: #e4e8ea;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  overflow: hidden;
 }
 
 .card-img {
   width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-  border-bottom: 1px solid var(--line);
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
-.card .name,
-.card .type,
-.card .price {
-  padding: 0 14px;
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px 14px;
+  flex: 1;
 }
 
 .name {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
+  line-height: 1.2;
+}
+
+.type {
+  color: var(--steel);
+  font-size: 0.85rem;
 }
 
 .price {
   color: var(--brass);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
+  margin-top: auto;
+  padding-top: 6px;
 }
 
-.type {
+/* =========================================
+   NO GUNS MATCH (Empty State)
+   ========================================= */
+.no-guns-box {
+  text-align: center;
+  padding: 48px 24px;
+  background: #fff;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  margin: 16px 0;
+}
+
+.no-guns-message {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 6px;
+  text-transform: lowercase;
+}
+
+.no-guns-sub {
   color: var(--steel);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  margin: 0 0 18px;
 }
 
+.reset-filter-btn {
+  padding: 8px 18px;
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.reset-filter-btn:hover {
+  background: var(--brass);
+}
+
+/* =========================================
+   DETAIL POPUP DIALOG
+   ========================================= */
 .popup {
-  width: min(420px, calc(100vw - 32px));
+  width: min(440px, calc(100vw - 32px));
   padding: 0 0 20px;
   border: 1px solid var(--line);
   color: var(--ink);
   background: var(--paper);
+  border-radius: 6px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
 }
 
 .popup::backdrop {
-  background: rgb(24 34 44 / 0.55);
+  background: rgb(24 34 44 / 0.65);
+  backdrop-filter: blur(2px);
+}
+
+.popup-img-wrap {
+  width: 100%;
+  height: 180px;
+  background: #e4e8ea;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin-bottom: 16px;
 }
 
 .popup-img {
   width: 100%;
-  height: auto;
-  margin-bottom: 16px;
-  border-bottom: 1px solid var(--line);
+  height: 100%;
+  object-fit: contain;
 }
 
 .popup h3,
@@ -203,6 +448,7 @@
   background: none;
   font: inherit;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 .popup-close:hover {
@@ -210,6 +456,9 @@
   color: var(--paper);
 }
 
+/* =========================================
+   FOOTER
+   ========================================= */
 .footer {
   margin-top: auto;
   padding: 20px 24px;

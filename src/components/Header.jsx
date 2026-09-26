@@ -3,7 +3,9 @@ const NAV = ['Catalog', 'About', 'Contact']
 function Header({ tab, onTab }) {
   return (
     <header className="header">
-      <span className="brand display">Bore &amp; Barrel</span>
+      <span className="brand display" onClick={() => onTab('Catalog')} style={{ cursor: 'pointer' }}>
+        Bore &amp; Barrel
+      </span>
       <nav className="nav">
         {NAV.map((item) => (
           <button

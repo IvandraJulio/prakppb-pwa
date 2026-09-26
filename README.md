@@ -40,7 +40,7 @@ npm run lint     # oxlint
     ├── data/
     │   └── guns.js         # dummy product data
     └── pages/
-        ├── Catalog.jsx     # product grid
+        ├── Catalog.jsx     # product grid + search + filter + sort
         ├── About.jsx
         └── Contact.jsx
 ```
